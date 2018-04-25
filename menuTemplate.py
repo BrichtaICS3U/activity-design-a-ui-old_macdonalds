@@ -33,7 +33,7 @@ pygame.display.set_caption("My Button")
 fontTitle = pygame.font.Font('freesansbold.ttf', 60)
 textSurfaceTitle = fontTitle.render('My Awesome Game!', True, BLACK) 
 textRectTitle = textSurfaceTitle.get_rect()
-textRectTitle.center = (SCREENWIDTH/2, SCREENHEIGHT/3) # place the centre of the text
+textRectTitle.center = (SCREENWIDTH/2, SCREENHEIGHT/6) # place the centre of the text
 
 # Button's font
 font = pygame.font.Font ('Comic Sans MS.ttf', 24)
@@ -41,12 +41,12 @@ font = pygame.font.Font ('Comic Sans MS.ttf', 24)
 # Play button 
 textFacePlay = font.render ("Play", True, BLACK)
 textRectPlay = textFacePlay.get_rect()
-textRectPlay.center = (SCREENWIDTH/3, SCREENHEIGHT/2 + 25)
+textRectPlay.center = (SCREENWIDTH/2, SCREENHEIGHT/3 + 25)
 
 # Options button
 textFaceOptions = font.render ("Options", True, BLACK)
 textRectOptions = textFaceOptions.get_rect()
-textRectOptions.center = (SCREENWIDTH*2/3, SCREENHEIGHT/2 + 25)
+textRectOptions.center = (SCREENWIDTH/2, SCREENHEIGHT/2 + 25)
 
 # Quit button
 textFaceQuit = font.render ("Quit", True, BLACK)
@@ -84,31 +84,13 @@ while carryOn:
     
     # Buttons
     # Play button
-    if SCREENWIDTH/3-50 < mouse[0] < SCREENWIDTH/3+50 and SCREENHEIGHT/2 < mouse[1] < SCREENHEIGHT/2 + 50 and click[0] == 1:
-        pygame.draw.rect(screen, ORANGE, (SCREENWIDTH/3-50, SCREENHEIGHT/2, 100, 50))
-        print('Les go')
-    elif SCREENWIDTH/3-50 < mouse[0] < SCREENWIDTH/3+50 and SCREENHEIGHT/2 < mouse[1] < SCREENHEIGHT/2 + 50:
-        pygame.draw.rect(screen, BRIGHT_GREEN, (SCREENWIDTH/3-50, SCREENHEIGHT/2, 100, 50))
-    else:
-        pygame.draw.rect(screen, GREEN, (SCREENWIDTH/3-50, SCREENHEIGHT/2, 100, 50))
+    pygame.draw.rect(screen, GREEN, (SCREENWIDTH/2-50, SCREENHEIGHT/3, 100, 50))
 
      # Options button
-    if SCREENWIDTH * 2/3 - 50 < mouse[0] < SCREENWIDTH * 2/3 + 50 and SCREENHEIGHT/2 < mouse[1] < SCREENHEIGHT/2 + 50 and click [0] == 1 :
-        pygame.draw.rect(screen, ORANGE, (SCREENWIDTH*2/3-50, SCREENHEIGHT/2, 100, 50))
-        print ("Options")
-    elif SCREENWIDTH * 2/3 - 50 < mouse[0] < SCREENWIDTH * 2/3 + 50 and  SCREENHEIGHT/2 < mouse[1] < SCREENHEIGHT/2 + 50 :
-        pygame.draw.rect (screen, BRIGHT_BLUE, (SCREENWIDTH * 2/3 - 50, SCREENHEIGHT/2, 100, 50))
-    else :
-       pygame.draw.rect (screen, BLUE, (SCREENWIDTH * 2/3 - 50, SCREENHEIGHT/2, 100, 50))
+    pygame.draw.rect (screen, BLUE, (SCREENWIDTH/2 - 50, SCREENHEIGHT/2, 100, 50))
 
     # Quit button
-    if SCREENWIDTH/2 - 50 < mouse[0] < SCREENWIDTH/2 + 50 and SCREENHEIGHT * 2/3 < mouse[1] < SCREENHEIGHT * 2/3 +50 and click[0] == 1 :
-        pygame.draw.rect (screen, ORANGE, (SCREENWIDTH/2 - 50, SCREENHEIGHT * 2/3, 100, 50))
-        print ("Quit")
-    elif SCREENWIDTH/2 - 50 < mouse[0] < SCREENWIDTH/2 + 50  and SCREENHEIGHT * 2/3 < mouse[1] < SCREENHEIGHT * 2/3 +50 :
-       pygame.draw.rect (screen, BRIGHT_RED, (SCREENWIDTH/2 - 50, SCREENHEIGHT * 2/3, 100, 50))
-    else :
-       pygame.draw.rect (screen, RED, (SCREENWIDTH/2 - 50, SCREENHEIGHT * 2/3, 100, 50))
+    pygame.draw.rect (screen, RED, (SCREENWIDTH/2 - 50, SCREENHEIGHT * 2/3, 100, 50))
 
 
     # Text
@@ -125,4 +107,3 @@ while carryOn:
 
 # Once the main program loop is exited, stop the game engine
 pygame.quit()
-
