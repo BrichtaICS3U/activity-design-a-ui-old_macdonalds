@@ -40,18 +40,18 @@ textRectTitle.center = (SCREENWIDTH/2, SCREENHEIGHT/3) # place the centre of the
 # Button's font
 font = pygame.font.Font ('Comic Sans MS.ttf', 24)
 
-# Play button 
-textFacePlay = font.render ("Play", True, BLACK)
+# Play button Text
+textFacePlay = font.render ("Play", True, WHITE)
 textRectPlay = textFacePlay.get_rect()
 textRectPlay.center = (SCREENWIDTH/3, SCREENHEIGHT/2 + 25)
 
-# Options button
-textFaceOptions = font.render ("Options", True, BLACK)
+# Options button Text
+textFaceOptions = font.render ("Options", True, WHITE)
 textRectOptions = textFaceOptions.get_rect()
 textRectOptions.center = (SCREENWIDTH*2/3, SCREENHEIGHT/2 + 25)
 
-# Quit button
-textFaceQuit = font.render ("Quit", True, BLACK)
+# Quit button Text
+textFaceQuit = font.render ("Quit", True, WHITE)
 textRectQuit = textFaceQuit.get_rect()
 textRectQuit.center = (SCREENWIDTH/2, SCREENHEIGHT * 2/3 + 25)
 
@@ -125,6 +125,9 @@ while carryOn:
             
     # Text
     screen.blit(textSurfaceTitle, textRectTitle)
+    screen.blit(textFacePlay, textRectPlay)
+    screen.blit(textFaceOptions, textRectOptions)
+    screen.blit(textFaceQuit, textRectQuit)
 
     # Update the screen with queued shapes
     pygame.display.flip()
