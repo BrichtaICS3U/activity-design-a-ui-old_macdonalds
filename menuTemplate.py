@@ -29,7 +29,9 @@ pygame.display.set_caption("My Button")
 fontTitle = pygame.font.Font('freesansbold.ttf', 32)
 textSurfaceTitle = fontTitle.render('My Awesome Game!', True, BLACK) 
 textRectTitle = textSurfaceTitle.get_rect()
+<<<<<<< HEAD
 textRectTitle.center = (SCREENWIDTH/2, SCREENHEIGHT/3)   # place the centre of the text
+>>>>>>> parent of 616d0d1... Change look and setup
 
 # This loop will continue until the user exits the game
 carryOn = True
@@ -60,6 +62,7 @@ while carryOn:
     # Queue shapes to be drawn
     
     # Buttons
+<<<<<<< HEAD
 
     # Green button
     if SCREENWIDTH/3-50 < mouse[0] < SCREENWIDTH/3+50 and SCREENHEIGHT/2 < mouse[1] < SCREENHEIGHT/2 + 50 and click[0] == 1:
@@ -69,6 +72,8 @@ while carryOn:
         pygame.draw.rect(screen, BRIGHT_GREEN, (SCREENWIDTH/3-50, SCREENHEIGHT/2, 100, 50))
     else:
         pygame.draw.rect(screen, GREEN, (SCREENWIDTH/3-50, SCREENHEIGHT/2, 100, 50))
+=======
+>>>>>>> parent of 616d0d1... Change look and setup
 
     # Red button
     pygame.draw.rect(screen, RED, (SCREENWIDTH*2/3-50, SCREENHEIGHT/2, 100, 50))
@@ -84,3 +89,4 @@ while carryOn:
 
 # Once the main program loop is exited, stop the game engine
 pygame.quit()
+
