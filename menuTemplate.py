@@ -3,7 +3,7 @@
 
 # Import the pygame library and initialise the game engine
 import pygame
-
+from ButtonClass import Button
 pygame.init()
 
 # Define some colours
@@ -111,6 +111,18 @@ while carryOn:
     else :
        pygame.draw.rect (screen, RED, (SCREENWIDTH/2 - 50, SCREENHEIGHT * 2/3, 100, 50))
 
+    if Button.level == 1:
+        for Button.button in Button.level1_buttons:
+            Button.button.draw()
+            
+    if Button.level == 2:
+        for Button.button in Button.level2_buttons:
+            Button.button.draw()
+
+    if Button.level == 3:
+        for Button.button in Button.level3_buttons:
+            Button.button.draw()
+            
     # Text
     screen.blit(textSurfaceTitle, textRectTitle)
 

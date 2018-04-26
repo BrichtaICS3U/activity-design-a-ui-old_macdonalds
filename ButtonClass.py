@@ -74,7 +74,7 @@ def my_next_function():
 def my_previous_function():
     """A function that retreats to the previous level"""
     global level
-    level -= 1
+    level = 1
 
 def my_quit_function():
     """A function that will quit the game and close the pygame window"""
@@ -85,6 +85,11 @@ def my_settings_function():
     """A function that retreats to the previous level"""
     global level
     level += 2
+
+def my_sound_function():
+    """A function that retreats to the previous level"""
+    global level
+    level += 0
 
 def mousebuttondown(level):
     """A function that checks which button was pressed"""
@@ -108,14 +113,15 @@ carryOn = True
 clock = pygame.time.Clock()
 
 #create button objects
-button_01 = Button("Next", (SCREENWIDTH/2, SCREENHEIGHT/3), my_next_function)
+button_01 = Button("Play", (SCREENWIDTH/2, SCREENHEIGHT/3), my_next_function)
 button_02 = Button("Previous", (SCREENWIDTH/2, SCREENHEIGHT/3), my_previous_function)
 button_03 = Button("Quit", (SCREENWIDTH/2, SCREENHEIGHT*2/3), my_quit_function, bg=(50, 200, 20))
 button_04 = Button("Settings", (SCREENWIDTH/2, SCREENHEIGHT/2), my_settings_function, bg=(255, 0, 0))
+button_05 = Button("Sound", (SCREENWIDTH/2, SCREENHEIGHT/2), my_settings_function, bg=(255, 0, 0))
 #arrange button groups depending on level
 level1_buttons = [button_01, button_03, button_04]
 level2_buttons = [button_02, button_03]
-level3_buttons = [button_02, button_03]
+level3_buttons = [button_02, button_05, button_03]
 
 #---------Main Program Loop----------
 while carryOn:
